@@ -25,7 +25,9 @@ jobs:
         with:
           node-version: 24
           cache: npm
-      - run: npm ci
+      # Не «npm ci»: файл блокировки создан на Windows, и npm не записывает в него часть
+      # необязательных пакетов для Linux, из-за чего строгая установка завершается ошибкой.
+      - run: npm install --no-audit --no-fund
       - run: npm test
       - run: npm run build:pages
       - uses: actions/upload-pages-artifact@v3
