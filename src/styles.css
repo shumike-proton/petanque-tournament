@@ -830,3 +830,70 @@ select.box-select {
   min-width: 0;
   padding: 3px 4px;
 }
+
+/* Узкий экран (телефон). */
+@media screen and (max-width: 640px) {
+  .page {
+    padding: 12px 10px 32px;
+  }
+
+  h1 {
+    font-size: 21px;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  /* При шрифте меньше 16px iOS увеличивает страницу при вводе в поле. */
+  input,
+  select,
+  button {
+    font-size: 16px;
+  }
+
+  .tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .tab {
+    white-space: nowrap;
+    padding: 8px 10px;
+  }
+
+  .table th,
+  .table td {
+    padding: 6px;
+  }
+
+  .match {
+    grid-template-columns: minmax(0, 1fr) 46px auto 46px minmax(0, 1fr) 48px;
+    gap: 4px;
+  }
+
+  .match input {
+    padding: 4px 2px;
+  }
+
+  .bracket {
+    gap: 12px;
+  }
+
+  .bracket-round {
+    flex-basis: 200px;
+  }
+
+  .ordered li > .grow {
+    display: block;
+    min-width: 0;
+  }
+
+  input.wide {
+    min-width: 130px;
+  }
+
+  .row.spread {
+    align-items: flex-start;
+  }
+}
